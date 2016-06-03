@@ -1,6 +1,6 @@
 from tkinter import *
 
-
+# Testing class based GUI thing, super simple
 class Application:
 
     def __init__(self, master):  # Master means root or main window
