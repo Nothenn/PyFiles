@@ -1,3 +1,5 @@
+# Testing tkinter to see what python GUI is like
+
 from tkinter import *
 
 def doNothing():
