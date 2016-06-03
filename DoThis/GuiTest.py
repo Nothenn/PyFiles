@@ -1,21 +1,33 @@
 from tkinter import *
-
+from tkinter import font
 # Testing class based GUI thing, super simple
+
+
 class Application:
 
-    def __init__(self, master):  # Master means root or main window
-        frame = Frame(master)
+    def __init__(self):  # Master means root or main window
+        root = Tk()
+        frame = Frame(root, borderwidth=10, bg="#40E0D0")
         frame.pack()
 
-        self.printButton = Button(frame, text="Print Message", command=self.printMessage)
-        self.printButton.pack(side=LEFT)
+        self.colour = "#40E0D0"
+        self.customFont = ("Helvetica", 18)
 
-        self.quitButton = Button(frame, text="Quit", command=frame.quit)
-        self.quitButton.pack(side=LEFT)
+        self.userLabel = Label(frame, text="User: ", font=self.customFont, bg=self.colour).grid(row=0)
+        self.passLabel = Label(frame, text="Pass: ", font=self.customFont, bg=self.colour).grid(row=1)
 
-    def printMessage(self):
-        print("Wow. This actually worked!")
+        self.userNameInput = Entry(frame, font=self.customFont)
+        self.passInput = Entry(frame, font=self.customFont)
+        self.submitButton = Button(frame, text="Submit", command=lambda: self.printmessage(self.userNameInput.get(), self.passInput.get()))
 
-root = Tk()
-x = Application(root)
-root.mainloop()
+        self.userNameInput.grid(row=0,column=1)
+        self.passInput.grid(row=1,column=1)
+        self.submitButton.grid(row=2,columnspan=2, pady=10)
+
+        root.mainloop()
+
+    def printmessage(self, nameIn, passIn):
+        print("Name: " + nameIn)
+        print("Pass: " + passIn)
+
+app = Application()
