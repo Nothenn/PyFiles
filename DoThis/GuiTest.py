@@ -12,9 +12,11 @@ class Application:
 
         self.colour = "#40E0D0"
         self.customFont = ("Helvetica", 18)
-
+        
         self.userLabel = Label(frame, text="User: ", font=self.customFont, bg=self.colour).grid(row=0)
         self.passLabel = Label(frame, text="Pass: ", font=self.customFont, bg=self.colour).grid(row=1)
+        
+        # Adding comment is VS Code
 
         self.userNameInput = Entry(frame, font=self.customFont)
         self.passInput = Entry(frame, font=self.customFont)
