@@ -6,10 +6,8 @@ with open('names.txt') as input:
         date = tuple(map(int, date.split('-')))
         info[player] = dict(zip(('stats', 'outcome', 'date'), (stats, outcome, date)))
 
-#print ('info:')
-#for player, record in info.items():
-#    print ('  player %r:' % player)
-#    for field, value in record.items():
-#        print ('    %s: %s' % (field, value))
-
-# x resembles the items between the dashes. x.
+print ('info:')
+for player, record in info.items():
+   print ('  player %r:' % player)
+   for field, value in record.items():
+       print ('    %s: %s' % (field, value))
