@@ -11,7 +11,7 @@ while True:
     y = x.group(0)
     print(y)
 
-    z = (time.strftime("%d/%m/%Y at %H:%M") + " Ping:" + y + "\n")
+    z = (time.strftime("%d/%m/%Y at %H:%M:%S") + " Ping:" + y + "\n")
 
     with open("ping_record.txt","a") as b:
         b.write(z)
