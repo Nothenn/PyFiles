@@ -2,7 +2,7 @@ import time, re, random
 from subprocess import check_output
 
 
-hostname = "4.2.2.2"
+hostname = "8.8.8.8"
 
 ran = random.randrange(1000)
 while True:
