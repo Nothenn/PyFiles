@@ -1,23 +1,26 @@
 from pydub import AudioSegment
 import re
-
 import easygui
 
-#root = tkinter.Tk()
-#filename = filedialog.askopenfilename()
-#root.withdraw()
-
+#Gets MP3 File
 print("Select MP3 File: ")
 filename = easygui.fileopenbox(msg="Select MP3 File:")
 sound = AudioSegment.from_mp3(filename)
 
+#Read in timestamp file
 print("Select Timestamp File: ")
 timestamps = easygui.fileopenbox(filetypes= '*.txt')
-#Read in timestamp file
+
+#Gets output directory
+print("Select output directory: ")
+outDir = easygui.diropenbox()
+
+#Gets each "song" into an array
 with open(timestamps, "r") as f:
     array = []
     for line in f:
         array.append(line.strip('\n'))
+
 
 count = 0
 for x in array:
@@ -61,6 +64,7 @@ for x in array:
     song = sound[:tim2]
     test = tim2 - tim1
     song = song[-test:]
+    song.export(outDir + "/" + name + ".mp3", format="mp3")
     newcount+=1
 
 input('Press ENTER to exit')
