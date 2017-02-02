@@ -27,7 +27,8 @@ for x in array:
     
     split = x.split(" ",1)
     time = split[0]
-
+	
+	#Converts timestamp to ms for pydub, if the timestamp is over an hour you have to convert it to mintues
     s = time
     minutes, seconds = (["0", "0"] + s.split(":"))[-2:]
     minutes = int(minutes)
